@@ -199,12 +199,21 @@ public class Grid  {
             Grid minesweeper = new Grid();
         }
         else if (letter.equalsIgnoreCase("C")) {
-            System.out.println("How many rows? Type an integer.");
+            System.out.println("How many rows? Type an integer above 1.");
             int rows = scnr.nextInt();
-            System.out.println("How many columns? Type an integer.");
+            if (rows <= 1) {
+                rows = 2;
+            }
+            System.out.println("How many columns? Type an integer above 1.");
             int cols =  scnr.nextInt();
-            System.out.println("How many bombs? Type an integer.");
+            if (cols <= 1) {
+                cols = 2;
+            }
+            System.out.println("How many bombs? Type an integer above 0.");
             int bombs = scnr.nextInt();
+            if (bombs <= 0) {
+                bombs = 1;
+            }
             Grid minesweeper = new Grid(rows, cols, bombs);
         }
     }
