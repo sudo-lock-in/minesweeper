@@ -1,4 +1,3 @@
-//https://youtu.be/mIA_A1AuyYM
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,7 +14,7 @@ public class Grid  {
         numBombs = 25;
         createBombGrid();
         createCountGrid();
-        //GUI();
+        GUI();
     }
     public Grid(int rows, int cols) {
         numColumns = cols;
@@ -23,7 +22,7 @@ public class Grid  {
         numBombs = 25;
         createBombGrid();
         createCountGrid();
-        //GUI();
+        GUI();
     }
     public Grid(int rows, int cols, int bombs) {
         numColumns = cols;
@@ -31,7 +30,7 @@ public class Grid  {
         numBombs = bombs;
         createBombGrid();
         createCountGrid();
-        //GUI();
+        GUI();
     }
 
     public int getNumRows() {
@@ -190,7 +189,6 @@ public class Grid  {
     }
 
     public static void main(String[] args) {
-        //Grid test = new Grid(5, 5, 1);
 
     }
 }
