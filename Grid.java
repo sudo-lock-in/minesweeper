@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.util.*;
 
 public class Grid  {
     private boolean[][] bombGrid;
@@ -129,6 +130,7 @@ public class Grid  {
     public void GUI() {
         JFrame grid = new JFrame("Minesweeper");
         grid.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        grid.setExtendedState(JFrame.MAXIMIZED_BOTH);
         grid.setLayout(new GridLayout(numRows, numColumns));
         JButton[][] buttons = new JButton[numRows][numColumns];
         //i had to make some variables effectively final to work in lambda action listener
@@ -189,8 +191,21 @@ public class Grid  {
     }
 
     public static void main(String[] args) {
-        System.out.println("How many rows?");
-
-
+        Scanner scnr = new Scanner(System.in);
+        System.out.println("Default grid settings: 10x10 with 25 bombs.");
+        System.out.println("Enter \"D\" to play with default grid settings. Enter \"C\" to play with custom grid settings.");
+        String letter = scnr.nextLine();
+        if (letter.equalsIgnoreCase("D") ) {
+            Grid minesweeper = new Grid();
+        }
+        else if (letter.equalsIgnoreCase("C")) {
+            System.out.println("How many rows? Type an integer.");
+            int rows = scnr.nextInt();
+            System.out.println("How many columns? Type an integer.");
+            int cols =  scnr.nextInt();
+            System.out.println("How many bombs? Type an integer.");
+            int bombs = scnr.nextInt();
+            Grid minesweeper = new Grid(rows, cols, bombs);
+        }
     }
 }
